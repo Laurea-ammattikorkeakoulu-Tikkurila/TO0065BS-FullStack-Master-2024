@@ -94,7 +94,7 @@ Create some other routes too!
 
 1. Create a GitHub-repository “R0314 MEAN” and upload the folder WS0 with completed Exercises to you GitHub-account.
 
-|<p>![ref1]Laurea-ammattikorkeakoulu  </p><p>![ref1]Ratatie 22, 01300 Vantaa</p>|<p>![ref1]![ref1]Puhelin (09) 8868 7150</p><p>Faksi (09) 8868 7200</p>|<p>![ref1]![ref1]![ref1]etunimi.sukunimi@laurea.fi      </p><p>![ref1]www.laurea.fi</p>|Y-tunnus             1046216-1<br>Kotipaikka           Vantaa|
+|<p>![ref1]Laurea-ammattikorkeakoulu  </p><p>![ref1]Ratatie 22, 01300 Vantaa</p>|<p>![ref1]![ref1]Puhelin (09) 8868 7150</p><p>Faksi (09) 8868 7200</p>|<p>![ref1]![ref1]![ref1]jari.kovalainen@laurea.fi      </p><p>![ref1]www.laurea.fi</p>|Y-tunnus             1046216-1<br>Kotipaikka           Vantaa|
 | :- | :- | :- | :- |
 |||||
 
