@@ -12,7 +12,7 @@ http
     );
 
     var data =
-      "<table border='1'><tr><td>Eka solu</td><td>Toka solu</td></tr><tr><td>Eka solu</td><td>Toka solu</td></tr></table>";
+      "<table border='1'><tr><td>Eka rivi eka solu</td><td>Toka solu</td></tr><tr><td>Toka rivi eka solu</td><td>Toka solu</td></tr></table>";
     response.write(data);
 
     response.end("<strong>This is the end</strong>"); //end the response
