@@ -1,0 +1,43 @@
+<html>
+<!-- BOOTSRAP -tyylien määrittely -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+<!-- Tyylien määrittelyä -->
+<style>
+    div {
+        margin: 10px;
+    }
+
+    form {
+        border: 1px solid lightgrey;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <div>
+        <!-- Huomaa, että lomakkeen metodi = POST -->
+        <!-- action -määrittelee URL:n johon POST-tyyppinen pyyntö lähetetään -->
+        <form method="POST" action="/kirjaudu">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <!-- Huomaa tekstikentän name-attribuutti -->
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter email" name="email" />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <!-- Huomaa tekstikentän name-attribuutti -->
+                <input type="password" class="form-control" id="pass" placeholder="Password" name="pass" />
+            </div>
+            <!-- Buttonin type = submit, joka saa aikaan lomakkeen lähetyksen -->
+            <button type="submit" id="button1" class="btn btn-primary">
+                Submit
+            </button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
