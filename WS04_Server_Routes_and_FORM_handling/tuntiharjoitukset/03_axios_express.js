@@ -17,7 +17,7 @@ app.get("/", function (req, res) {
     // Luodaan AJAX-kysely ja lähetetään pyyntö
     const promise = axios
         // 
-        .get("http://www.omdbapi.com/?s=star+wars&apikey=" + API_KEY)
+        .get("http://www.omdbapi.com/?s=Bond&apikey=" + API_KEY)
         // Käsitellään vastaus kun se saapuu
         .then((response) => {
             const data = response.data;

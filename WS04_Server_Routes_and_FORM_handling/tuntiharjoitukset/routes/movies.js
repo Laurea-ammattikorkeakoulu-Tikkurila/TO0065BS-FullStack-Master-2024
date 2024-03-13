@@ -1,30 +1,23 @@
-//haetaan express moduuli
-const express = require("express");
-//haetaan axios moduuli
+const express = require('express')
+const router = express.Router()
 const axios = require("axios");
-//haetaan dotenv moduuli
-const dotenv = require('dotenv').config()
-//haetaan API_KEY .env tiedostosta
-const API_KEY = dotenv.parsed.API_KEY;
-// luodaan express-instanssi
-const app = express();
-//haetaan PORT ympäristömuuttuja .env tiedostosta
-const PORT = dotenv.parsed.PORT04 || 3004;
+const API_KEY = process.env.API_KEY;
+
 
 // async funktion määrittely, joka hakee elokuvatietoja
 async function getMovies() {
     // kutsutaan axios.get-metodia ja saadaan promise-objekti
     try {
         const response = await axios.get("http://www.omdbapi.com/?s=Vares&apikey=" + API_KEY);
-        console.log(response.data);
+        //console.log(response.data.Search);
         return response.data;
     } catch (error) {
-        console.error(error);
+        //console.error(error);
     }
 
 }
-
-app.get("/", function (req, res) {
+// määritellään reitti, joka vastaa juurireittiä
+router.get("/", function (req, res) {
 
     // kutsutaan getMovies-funktio ja saadaan vastaus promise-objektin avulla
     // kutsutaan then-metodia, joka käsittelee promise-objektin vastauksen
@@ -40,8 +33,5 @@ app.get("/", function (req, res) {
     });
 }
 );
-// kuunnellaan porttia ja tulostetaan konsoliin viesti
-app.listen(PORT, function () {
-    console.log('Example app listening on port: ' + PORT);
-});
-
+//viedään router käyttöön serverillä
+module.exports = router

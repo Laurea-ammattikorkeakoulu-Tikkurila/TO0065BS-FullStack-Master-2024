@@ -2,16 +2,19 @@
 const express = require("express");
 //haetaan axios moduuli
 const axios = require("axios");
-//haetaan dotenv moduuli
-const dotenv = require('dotenv').config()
-//haetaan API_KEY .env tiedostosta
-const API_KEY = dotenv.parsed.API_KEY;
 // luodaan express-instanssi
 const app = express();
-//haetaan PORT ympäristömuuttuja .env tiedostosta
-const PORT = dotenv.parsed.PORT04 || 3004;
+// haetaan movies.js router
+const movies = require('./routes/movies');
 
-// async funktion määrittely, joka hakee elokuvatietoja
+//haetaan PORT ympäristömuuttuja .env tiedostosta
+const PORT = process.env.PORT05 || 3005;
+
+// käytetään movies.js routeria
+
+app.use('/', movies);
+
+/* // async funktion määrittely, joka hakee elokuvatietoja
 async function getMovies() {
     // kutsutaan axios.get-metodia ja saadaan promise-objekti
     try {
@@ -39,7 +42,7 @@ app.get("/", function (req, res) {
         res.end(); //HTTP vastaus päättyy
     });
 }
-);
+); */
 // kuunnellaan porttia ja tulostetaan konsoliin viesti
 app.listen(PORT, function () {
     console.log('Example app listening on port: ' + PORT);
