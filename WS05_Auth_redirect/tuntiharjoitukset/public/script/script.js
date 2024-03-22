@@ -15,9 +15,10 @@ window.onload = event => {
         // lisätään kuuntelija joka tarkistaa onko readyState 4 ja status 200
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText);
-            }
-        };
+                // jos vastaus on ok, ohjataan käyttäjä etusivulle
+                window.location.href = this.responseURL;
+            };
+        }
         // avataan yhteys ja lähetetään data
         xmlhttp.open("POST", "http://localhost:3000/kirjaudu", true);
         // asetetaan pyynnön otsake

@@ -3,24 +3,16 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
-
-//haetaan dotenv moduuli
 const dotenv = require('dotenv').config();
-// luodaan palvelinportti
 const PORT = dotenv.parsed.PORT00 || 3000;
-
-// parse application/x-www-form-urlencoded 
+const path = require('path');
 const bodyParser = require('body-parser');
-//app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({
     extended: true
-})); // for parsing application/x-www-form-urlencoded
-
-
+}));
 
 // Serve static files from the "public" directory
-app.use(express.static('public'));
-//Serving a static file instead of a written message
+app.use(express.static(path.join(__dirname, 'public')));
 
 // luo juurireitti, joka palauttaa selaimeen index.html tiedoston sisällön
 app.get('/', function (req, res) {
@@ -28,23 +20,25 @@ app.get('/', function (req, res) {
 });
 
 app.get('/login', (req, res) => {
+
     res.sendFile(__dirname + '/public/login.html');
 });
 
 // luo reitti, joka palauttaa selaimeen etusivu.html tiedoston sisällön
 app.get('/etusivu', function (req, res) {
-    res.send('Tervetuloa etusivulle!');
+    //console.log('Tervetuloa etusivulle!');
+    console.log("Login ok. Polku : " + __dirname + '/public/etusivu');
+    res.sendFile(__dirname + '/public/etusivu.html');
 });
 
 app.post("/kirjaudu", function (req, res) {
-    console.log(req.body);
+    console.log("Serveri " + req.body.pass);
     if (req.body.pass == 'demo') {
-
-        res.redirect(302, '/etusivu');
+        res.redirect('/etusivu');
         console.log("Login ok")
     } else {
-        res.send("Login NOT ok");
-        console.log("Login NOT ok")
+        res.redirect('/');
+        console.log("Login failed")
     }
 });
 

@@ -23,14 +23,15 @@ router.get("/", function (req, res) {
     // kutsutaan then-metodia, joka käsittelee promise-objektin vastauksen
     // joka sisältää elokuvatietoja
     // kutsutaan res.write()-metodia, joka kirjoittaa vastauksen html sivulle
-    getMovies().then((data) => {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        for (var i = 0; i < data.Search.length; i++) {
-            res.write("<h3>" + data.Search[i].Title + "</h3>");
-            res.write("<img src='" + data.Search[i].Poster + "'>");
-        }
-        res.end(); //HTTP vastaus päättyy
-    });
+    getMovies()
+        .then((data) => {
+            res.writeHead(200, { "Content-Type": "text/html" });
+            for (var i = 0; i < data.Search.length; i++) {
+                res.write("<h3>" + data.Search[i].Title + "</h3>");
+                res.write("<img src='" + data.Search[i].Poster + "'>");
+            }
+            res.end(); //HTTP vastaus päättyy
+        });
 }
 );
 //viedään router käyttöön serverillä
