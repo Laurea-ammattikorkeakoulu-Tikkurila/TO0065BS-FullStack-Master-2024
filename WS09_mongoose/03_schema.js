@@ -1,12 +1,12 @@
 // Otetaan moduuli käyttöön
 require("dotenv").config();
 var mongoose = require("mongoose");
+
 const Kitten = require("./modules/model");
 // Määritellään yhteysosoite
 var user = process.env.DB_USER
 var salis = process.env.DB_PASS
 const uri = process.env.MONGODB_URI;
-
 
 // Luodaan yhteys
 
