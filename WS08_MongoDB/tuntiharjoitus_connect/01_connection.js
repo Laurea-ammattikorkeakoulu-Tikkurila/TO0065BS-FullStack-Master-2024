@@ -1,5 +1,4 @@
 const { MongoClient } = require('mongodb');
-
 require('dotenv').config();
 
 
@@ -12,6 +11,7 @@ async function main() {
     try {
         // Connect to the MongoDB cluster
         await client.connect();
+        console.log("Connected to the MongoDB cluster");
 
         // Make the appropriate DB calls
         await listDatabases(client);
@@ -21,6 +21,7 @@ async function main() {
     } finally {
         // Close the connection to the MongoDB cluster
         await client.close();
+        console.log("Disconnected from the MongoDB cluster");
     }
 }
 

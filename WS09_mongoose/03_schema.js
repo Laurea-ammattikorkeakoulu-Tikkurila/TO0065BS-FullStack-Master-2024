@@ -16,9 +16,9 @@ async function main() {
     await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     console.log("Yhteys on muodostettu!");
     /* Luodaan uusi kitten olio ja tulostetaan sen nimi konsoliin */
-    const silence = new Kitten({ name: 'Silence' });
+    const silence = new Kitten({ name: 'Musti' });
     console.log(silence.name); // 'Silence'
-    const fluffy = new Kitten({ name: 'Fluffy' });
+    const fluffy = new Kitten({ name: 'EMT' });
     const turbo = new Kitten();
     fluffy.speak(); // "Meow name is Fluffy"
     silence.speak();

@@ -1,11 +1,11 @@
 // Otetaan moduuli käyttöön
-require("dotenv").config();
-var mongoose = require("mongoose");
+//require("dotenv").config();
+//var mongoose = require("mongoose");
 
 // Määritellään yhteysosoite
-var user = process.env.DB_USER
+/* var user = process.env.DB_USER
 var salis = process.env.DB_PASS
-const uri = process.env.MONGODB_URI
+const uri = process.env.MONGODB_URI */
 
 function resolveAfter2Seconds() {
     return new Promise(resolve => {
