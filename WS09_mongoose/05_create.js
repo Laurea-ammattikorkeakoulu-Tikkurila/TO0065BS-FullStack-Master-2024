@@ -17,30 +17,29 @@ async function main() {
   });
 
   /* Luodaan uusi opiskelija olio ja tulostetaan sen nimi konsoliin ja tallennetaan tietokantaan*/
-  const miska = new Opiskelija({
-    name: "Miska",
-    email: "miska@laurea.fi",
-    age: 25,
+  const tupu = new Opiskelija({
+    name: "Tupu",
+    email: "tupu@laurea.fi",
+    age: 2501,
     group: "Koodarit",
   });
-  console.log(miska.name);
-  await miska.save();
+  await tupu.save();
   /* Luodaan kaksi uutta opiskelija oliota ja toinen tallennetaan tietokantaan ja toinen kutsuu methodia*/
-  const Jani = new Opiskelija({
-    name: "Jani",
-    email: "jani@laurea.fi",
-    age: 25,
+  const hupu = new Opiskelija({
+    name: "Hupu",
+    email: "hupu@laurea.fi",
+    age: 2500,
     group: "Koodarit",
   });
 
-  await Jani.save();
-  const Ari_Pekka = new Opiskelija({
-    name: "Ari_Pekka",
-    email: "apk@laurea.fi",
-    age: 23,
+  await hupu.save();
+  const Aku_Ankka = new Opiskelija({
+    name: "Aku Ankka",
+    email: "aku@laurea.fi",
+    age: 230,
     group: "Koodarit",
   });
-  Ari_Pekka.osaa();
+  Aku_Ankka.osaa();
 
   mongoose.connection.close();
   console.log("Yhteys on suljettu!");

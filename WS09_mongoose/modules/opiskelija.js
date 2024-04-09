@@ -27,8 +27,8 @@ const opiskelijaSchema = new mongoose.Schema({
 /* method to be added to the schema before compiling it with mongoose.model() */
 opiskelijaSchema.methods.osaa = function osaa() {
     const greeting = this.name
-        ? "Nimeni on " + this.name
-        : "Minulla ei ole nimeä";
+        ? "Nimeni on " + this.name + " ja osaan koodata!"
+        : "Minulla ei ole nimeä, mutta osaan koodata!";
     console.log(greeting);
 };
 
