@@ -20,8 +20,8 @@ async function main() {
         useUnifiedTopology: true
     });
     console.log("Yhteys on muodostettu!");
-    const filter = { group: 'Sählärit' };
-    const update = { group: 'FullStack Koodarit' };
+    const filter = { group: 'Koodarit' };
+    const update = { group: 'Sählärit' };
     const updated = await Opiskelija.updateMany(filter, update, { new: true });
     if (updated) {
         console.log("Opiskelijoiden " + updated.group + " ryhmä on päivitetty!");

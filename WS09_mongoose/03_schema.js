@@ -13,11 +13,14 @@ const uri = process.env.MONGODB_URI;
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    await mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
     console.log("Yhteys on muodostettu!");
     /* Luodaan uusi kitten olio ja tulostetaan sen nimi konsoliin */
     const silence = new Kitten({ name: 'Musti' });
-    console.log(silence.name); // 'Silence'
+    console.log(silence.name); // 'Musti'
     const fluffy = new Kitten({ name: 'EMT' });
     const turbo = new Kitten();
     fluffy.speak(); // "Meow name is Fluffy"
