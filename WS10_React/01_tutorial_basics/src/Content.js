@@ -1,8 +1,13 @@
 import React from 'react';
+import { useState } from "react";
+
 
 const Content = () => {
 
     const name = 'FullStack';
+
+    const [nimi, setNimi] = useState('FullStack');
+
     const handleNimi = () => {
         const nimi = ['FullStack', 'JavaScript', 'React', 'Laurea']
         const randomNimi = nimi[Math.floor(Math.random() * nimi.length)]
@@ -34,10 +39,9 @@ const Content = () => {
 
             {/* // Paragraph element with a double click event handler and a function call */}
             <p onDoubleClick={() => {
-                console.log('Double clicked');
-                const nimi = handleNimi();
+                setNimi(handleNimi());
                 console.log(nimi);
-            }}>Hello</p>
+            }}>Hello {nimi}</p>
 
 
             {/* // Button element with an event handler */}
